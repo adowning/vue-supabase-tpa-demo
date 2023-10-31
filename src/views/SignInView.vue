@@ -7,7 +7,7 @@ const isSigningIn = ref(false);
 async function signIn() {
   try {
     isSigningIn.value = true;
-    const { error } = await supabase.auth.signIn({ provider: 'github' });
+    const { error } = await supabase.auth.signIn({ provider: 'google' });
 
     if (error) {
       throw error;

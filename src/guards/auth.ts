@@ -12,6 +12,6 @@ export function authGuard(
     return next();
   } else {
     authStore.saveRedirectRoute(to);
-    return next({ name: 'SignIn' });
+    return next({ name: 'Home' });
   }
 }

@@ -1,6 +1,7 @@
 import { authGuard } from '@/guards/auth';
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import SliderView from '../views/SliderView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,7 +10,7 @@ const router = createRouter({
       path: '/',
       name: 'Home',
       meta: { authRequired: false },
-      component: HomeView
+      component: SliderView
     },
     {
       path: '/sign-in',
@@ -22,6 +23,18 @@ const router = createRouter({
       name: 'Profile',
       meta: { authRequired: true },
       component: () => import('../views/ProfileView.vue')
+    },
+    {
+      path: '/loggedout',
+      name: 'LoggedOut',
+      meta: { authRequired: false },
+      component: () => import('../views/LoggedOut.vue')
+    },
+    {
+      path: '/game',
+      name: 'Game',
+      meta: { authRequired: false },
+      component: () => import('../views/GameView.vue')
     }
   ]
 });

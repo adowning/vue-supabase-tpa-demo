@@ -3,6 +3,7 @@ import { RouteLocationRaw, RouterView, useRouter } from 'vue-router';
 
 import { supabase } from '@/supabase';
 import { useAuthStore } from '@/stores/auth';
+import ProfileView from './views/ProfileView.vue';
 
 const router = useRouter();
 const authStore = useAuthStore();
